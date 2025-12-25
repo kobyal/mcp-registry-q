@@ -8,11 +8,24 @@
         "version": "1.0.0",
         "packages": [
           {
-            "registryType": "npm",
+            "registryType": "manual",
             "identifier": "global-jdbc-sql-mcp",
             "transport": {
               "type": "stdio"
             },
+            "command": "java",
+            "args": [
+              "-Xms512m",
+              "-Xmx2g",
+              "-XX:+UseG1GC",
+              "-XX:MaxGCPauseMillis=200",
+              "-Dfile.encoding=UTF-8",
+              "-Dsun.stdout.encoding=UTF-8",
+              "-Dsun.stderr.encoding=UTF-8",
+              "-cp",
+              "MCPServer-1.0.0-runner.jar:mssql-jdbc-12.4.2.jre11.jar",
+              "io.quarkus.runner.GeneratedMain"
+            ],
             "environmentVariables": [
               {
                 "name": "jdbc.url",
@@ -26,7 +39,8 @@
                 "name": "jdbc.password",
                 "value": "REQUIRED"
               }
-            ]
+            ],
+            "installationInstructions": "Download JAR files from: https://github.com/kobyal/mcp-registry-q/releases/download/v1.0.0/MCPServer-1.0.0-runner.jar and https://github.com/kobyal/mcp-registry-q/releases/download/v1.0.0/mssql-jdbc-12.4.2.jre11.jar. Place both files in the same directory and ensure Java 21+ is installed."
           }
         ]
       }

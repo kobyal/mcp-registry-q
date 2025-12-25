@@ -1,0 +1,23 @@
+{
+  "name": "global-jdbc-sql-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for SQL Server database connectivity via JDBC",
+  "main": "index.js",
+  "bin": {
+    "global-jdbc-sql": "bin/global-jdbc-sql.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/download-jars.js"
+  },
+  "keywords": [
+    "mcp",
+    "sql",
+    "jdbc",
+    "database"
+  ],
+  "author": "Koby Almog",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

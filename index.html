@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP SQL Server Registry</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .registry-url {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+        .download-section {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-list li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .file-list a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        .file-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗄️ MCP SQL Server Registry</h1>
+        <p>Model Context Protocol server for SQL Server database connectivity</p>
+    </div>
+
+    <div class="registry-url">
+        <strong>Registry URL:</strong><br>
+        https://mcp-sql-registry-koby.s3.amazonaws.com/registry.json
+    </div>
+
+    <div class="download-section">
+        <h2>📥 Quick Setup</h2>
+        <p>Add this registry URL to your Amazon Q Developer MCP settings:</p>
+        <code>https://mcp-sql-registry-koby.s3.amazonaws.com/registry.json</code>
+        
+        <p>Or install manually:</p>
+        <code>curl -sSL https://mcp-sql-registry-koby.s3.amazonaws.com/install.sh | bash</code>
+    </div>
+
+    <div class="download-section">
+        <h3>✅ Ready to Use</h3>
+        <p>All JAR files are available and ready for download. The registry includes:</p>
+        <ul>
+            <li><strong>MCP Server:</strong> Quarkus-based JDBC MCP server (17.4 MB)</li>
+            <li><strong>JDBC Driver:</strong> Microsoft SQL Server driver v12.4.2 (1.4 MB)</li>
+        </ul>
+    </div>
+
+    <h2>📁 Available Files</h2>
+    <ul class="file-list">
+        <li><a href="registry.json">📄 registry.json</a> - MCP Registry configuration</li>
+        <li><a href="README.md">📖 README.md</a> - Documentation</li>
+        <li><a href="install.sh">🔧 install.sh</a> - Installation script</li>
+        <li><a href="MCPServer-1.0.0-runner.jar">☕ MCPServer-1.0.0-runner.jar</a> - MCP Server (17.4 MB)</li>
+        <li><a href="mssql-jdbc-12.4.2.jre11.jar">🗄️ mssql-jdbc-12.4.2.jre11.jar</a> - JDBC Driver (1.4 MB)</li>
+    </ul>
+
+    <h2>🛠️ Features</h2>
+    <ul>
+        <li>Execute SQL queries with JSON/Markdown output</li>
+        <li>Database schema exploration</li>
+        <li>Table structure inspection</li>
+        <li>Connection to any SQL Server instance</li>
+        <li>Secure credential management</li>
+    </ul>
+
+    <h2>📚 Documentation</h2>
+    <p>For detailed setup instructions, troubleshooting, and usage examples, see the <a href="README.md">README.md</a> file.</p>
+
+    <footer style="margin-top: 40px; text-align: center; color: #666;">
+        <p>Created by Koby Almog • December 2025</p>
+    </footer>
+</body>
+</html>

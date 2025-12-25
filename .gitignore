@@ -1,0 +1,15 @@
+# Large JAR files - will be uploaded to GitHub Releases instead
+*.jar
+*.tgz
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp

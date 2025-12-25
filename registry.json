@@ -1,0 +1,35 @@
+{
+  "servers": [
+    {
+      "server": {
+        "name": "global-jdbc-sql",
+        "title": "Global JDBC SQL Server Connector",
+        "description": "MCP server for connecting to SQL Server databases via JDBC with comprehensive query capabilities",
+        "version": "1.0.0",
+        "packages": [
+          {
+            "registryType": "npm",
+            "identifier": "global-jdbc-sql-mcp",
+            "transport": {
+              "type": "stdio"
+            },
+            "environmentVariables": [
+              {
+                "name": "jdbc.url",
+                "value": "REQUIRED"
+              },
+              {
+                "name": "jdbc.user",
+                "value": "REQUIRED"
+              },
+              {
+                "name": "jdbc.password",
+                "value": "REQUIRED"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

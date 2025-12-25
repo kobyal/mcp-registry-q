@@ -1,8 +1,29 @@
 # MCP Registry Deployment - SUCCESS! 🎉
 
 **Deployment Date:** December 25, 2024
-**Status:** ✅ LIVE AND WORKING
+**Status:** ✅ LIVE AND WORKING (Updated with npm format)
 **Method:** GitHub Pages
+**Latest Update:** Fixed registryType to use "npm" with tarball URL
+
+---
+
+## Important Fix Applied (December 25, 2024)
+
+**Issue:** Amazon Q rejected registry with error:
+```
+MCP Registry: Invalid registry format: Server 0: Package registryType must be npm, pypi, or oci
+```
+
+**Root Cause:** Initial registry used `registryType: "manual"` which is not supported by Amazon Q.
+
+**Fix Applied:**
+1. ✅ Changed `registryType` from "manual" to **"npm"**
+2. ✅ Created npm package tarball (33 MB) with JAR files included
+3. ✅ Uploaded tarball to GitHub Release: `global-jdbc-sql-mcp-1.0.0.tgz`
+4. ✅ Updated registry.json to reference tarball URL
+5. ✅ Configured npm package to auto-download JARs on install
+
+**Registry now uses:** `registryType: "npm"` with direct tarball URL
 
 ---
 
@@ -16,7 +37,11 @@ https://kobyal.github.io/mcp-registry-q/registry.json
 ### Repository:
 https://github.com/kobyal/mcp-registry-q
 
-### JAR Files (Release v1.0.0):
+### npm Package (Release v1.0.0):
+- **Tarball:** https://github.com/kobyal/mcp-registry-q/releases/download/v1.0.0/global-jdbc-sql-mcp-1.0.0.tgz (33 MB)
+- Includes both JAR files and auto-installer
+
+### Individual JAR Files (Release v1.0.0):
 - MCPServer: https://github.com/kobyal/mcp-registry-q/releases/download/v1.0.0/MCPServer-1.0.0-runner.jar
 - JDBC Driver: https://github.com/kobyal/mcp-registry-q/releases/download/v1.0.0/mssql-jdbc-12.4.2.jre11.jar
 
@@ -25,14 +50,17 @@ https://github.com/kobyal/mcp-registry-q
 ## What Was Deployed
 
 ✅ **registry.json** - MCP server registry with correct format:
-- `registryType: "manual"` (correct for JAR-based servers)
-- Full Java command and JVM arguments
+- `registryType: "npm"` (Amazon Q compatible)
+- References npm tarball URL for installation
 - Environment variables for JDBC connection
-- Installation instructions with download URLs
+- stdio transport type
 
-✅ **JAR Files** - Uploaded to GitHub Release v1.0.0:
-- MCPServer-1.0.0-runner.jar (18 MB)
-- mssql-jdbc-12.4.2.jre11.jar (1.4 MB)
+✅ **npm Package** - Complete package with JARs:
+- global-jdbc-sql-mcp-1.0.0.tgz (33 MB)
+- Includes MCPServer-1.0.0-runner.jar (18 MB)
+- Includes mssql-jdbc-12.4.2.jre11.jar (1.4 MB)
+- Auto-downloads JARs on install
+- Node.js wrapper for Java execution
 
 ✅ **Documentation** - Complete guides:
 - README.md
